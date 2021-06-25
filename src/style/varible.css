@@ -1,0 +1,10 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #efeeee;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #2f2f33;
+  }
+}

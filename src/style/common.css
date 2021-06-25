@@ -5,8 +5,7 @@
   background: #efeeee;
   border: none;
   border-radius: 20px;
-  box-shadow: -6px -6px 16px rgba(255,255,255,0.83),
-    6px 6px 16px rgba(217, 210, 200, 0.51);
+  box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.83), 6px 6px 16px rgba(217, 210, 200, 0.51);
   padding: 10px;
   font-size: 14px;
   color: #dcdada;
@@ -16,7 +15,7 @@
   color: #b7b7b7;
 }
 .neumorphism:active {
-  box-shadow: inset -6px -6px 16px rgba(255,255,255,0.83),
+  box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.83),
     inset 6px 6px 16px rgba(217, 210, 200, 0.51);
   color: #b7b7b7;
 }
