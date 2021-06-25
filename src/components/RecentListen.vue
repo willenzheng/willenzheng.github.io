@@ -95,6 +95,7 @@ export default {
   user-select: none;
   &__label {
     padding-left: 8px;
+    font-size: 14px;
     color: #fff;
   }
   &__player {

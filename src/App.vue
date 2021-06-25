@@ -6,7 +6,7 @@
 
 <style lang="scss">
 #app {
-  background: #efeeee;
+  background: var(--bg-color);
   font-family: 'PingFang SC', Helvetica, Arial, sans-serif;
 }
 </style>
