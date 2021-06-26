@@ -10,7 +10,7 @@
     >
       <div class="player__cover" ref="playerCover">
         <img
-          src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version-Audio) .jpg"
+          src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version) .jpg"
           alt=""
         />
       </div>
@@ -19,7 +19,7 @@
         <i v-else class="iconfont icon-zanting"></i>
       </div>
       <audio
-        src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version-Audio) .mp3"
+        src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version) .mp3"
         loop
         ref="music"
       ></audio>
@@ -73,6 +73,12 @@ export default {
         }
         this.$refs.playerCover.style.transform = `rotate(${this.angle}deg)`;
       }, 10);
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: "Follow You (Summer ’21 Version) ",
+        artist: "Imagine Dragons",
+        album: "Follow You (Summer ’21 Version) - Single",
+        artwork: [{src: "/img/Imagine Dragons - Follow You (Summer ’21 Version-Audio) .1d605805.jpg"}]
+      });
     },
 
     pauseMusic() {

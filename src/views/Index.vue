@@ -1,6 +1,6 @@
 <!-- 主页 -->
 <template>
-  <div class="index-page">
+  <div class="index-page" ref="index">
     <header class="header">
       <a href="https://www.notion.so/willen/Dev-bf2f217106e445c99e604964a348b8fe" target="blank">
         <div class="header__item">
@@ -13,6 +13,27 @@
       <recent-listen></recent-listen>
     </header>
     <export-sheet></export-sheet>
+    <div class="my-code">
+      <button @click="copyCode">复制</button>
+      <pre ref="pre">
+        let a = {
+          a:1,
+          b:2
+        }
+      </pre>
+    </div>
+    <p v-highlight>
+      <pre>
+        <code id="test" ref="test">
+function add() {
+  return a+b;
+}
+.css {
+  color: red;
+}
+        </code>
+      </pre>
+    </p>
   </div>
 </template>
 
@@ -29,7 +50,9 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      html:'let a = b',
+    };
   },
 
   computed: {},
@@ -38,10 +61,25 @@ export default {
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    let code = this.$refs.test.innerText;
+    console.log(code)
+
+    console.log(code.match('function'))
+    let code1 = code.slice(0,3,'dfdf')
+    console.log(code1)
+  },
 
   methods: {
-    print() {},
+    copyCode() {
+      const content = this.$refs.pre.innerText;
+      try {
+        navigator.clipboard.writeText(content)
+        console.log('复制成功')
+      } catch (err) {
+        console.log(`复制失败${err}`)
+      }
+    },
   },
 };
 </script>
@@ -86,6 +124,16 @@ export default {
   .export-sheet {
     margin-top: 100px;
     margin-left: 100px;
+  }
+  .my-code {
+    width: 100%;
+    background: #272822;
+    color: #eee;
+    font-size: 12px;
+    overflow-y: auto;
+    pre {
+      font-family: 'fira code', 'Courier New', Courier, monospace;
+    }
   }
 }
 </style>
