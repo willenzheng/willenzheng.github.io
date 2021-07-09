@@ -12,47 +12,27 @@
       </a>
       <recent-listen></recent-listen>
     </header>
-    <export-sheet></export-sheet>
-    <div class="my-code">
-      <button @click="copyCode">复制</button>
-      <pre ref="pre">
-        let a = {
-          a:1,
-          b:2
-        }
-      </pre>
-    </div>
-    <p v-highlight>
-      <pre>
-        <code id="test" ref="test">
-function add() {
-  return a+b;
-}
-.css {
-  color: red;
-}
-        </code>
-      </pre>
-    </p>
+    <main class="main">
+      <div>
+        <img src="@/assets/meme/work-hard.jpeg" alt="">
+      </div>
+      <div>改版中...</div>
+    </main>
   </div>
 </template>
 
 <script>
-import recentListen from '@/components/RecentListen.vue';
-import exportSheet from '@/components/ExportSheet.vue';
+import RecentListen from '@/components/RecentListen.vue';
 
 export default {
   name: 'IndexPage',
 
   components: {
-    recentListen,
-    exportSheet,
+    RecentListen,
   },
 
   data() {
-    return {
-      html:'let a = b',
-    };
+    return {};
   },
 
   computed: {},
@@ -61,26 +41,9 @@ export default {
 
   created() {},
 
-  mounted() {
-    let code = this.$refs.test.innerText;
-    console.log(code)
+  mounted() {},
 
-    console.log(code.match('function'))
-    let code1 = code.slice(0,3,'dfdf')
-    console.log(code1)
-  },
-
-  methods: {
-    copyCode() {
-      const content = this.$refs.pre.innerText;
-      try {
-        navigator.clipboard.writeText(content)
-        console.log('复制成功')
-      } catch (err) {
-        console.log(`复制失败${err}`)
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -90,7 +53,7 @@ export default {
   height: 100vh;
   .header {
     width: 100%;
-    height: 50px;
+    height: 60px;
     background: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: center;
@@ -121,19 +84,15 @@ export default {
       }
     }
   }
-  .export-sheet {
-    margin-top: 100px;
-    margin-left: 100px;
-  }
-  .my-code {
+  .main {
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
     width: 100%;
-    background: #272822;
-    color: #eee;
-    font-size: 12px;
-    overflow-y: auto;
-    pre {
-      font-family: 'fira code', 'Courier New', Courier, monospace;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
