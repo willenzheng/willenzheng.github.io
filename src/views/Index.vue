@@ -2,33 +2,32 @@
 <template>
   <div class="index-page" ref="index">
     <header class="header">
-      <a href="https://www.notion.so/willen/Dev-bf2f217106e445c99e604964a348b8fe" target="blank">
-        <div class="header__item">
-          <div class="image-wrapper">
-            <img src="@/assets/logo-notion.png" alt="" />
+      <div class="header__wrapper">
+        <a href="https://www.notion.so/willen/Dev-bf2f217106e445c99e604964a348b8fe" target="blank">
+          <div class="header__item">
+            <div class="image-wrapper">
+              <img src="@/assets/logo-notion.png" alt="" />
+            </div>
+            <span>我的开发笔记</span>
           </div>
-          <span>我的开发笔记</span>
-        </div>
-      </a>
-      <recent-listen></recent-listen>
-    </header>
-    <main class="main">
-      <div>
-        <img src="@/assets/meme/work-hard.jpeg" alt="">
+        </a>
+        <recent-listen></recent-listen>
       </div>
-      <div>改版中...</div>
-    </main>
+    </header>
+    <sunset-slider></sunset-slider>
   </div>
 </template>
 
 <script>
 import RecentListen from '@/components/RecentListen.vue';
+import sunsetSlider from '@/components/SunsetSlider.vue';
 
 export default {
   name: 'IndexPage',
 
   components: {
     RecentListen,
+    sunsetSlider,
   },
 
   data() {
@@ -49,15 +48,23 @@ export default {
 
 <style lang="scss" scoped>
 .index-page {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100%;
   .header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 60px;
-    background: rgba(255, 255, 255, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    &__wrapper {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     &__item {
       display: flex;
       justify-content: center;
@@ -67,7 +74,7 @@ export default {
       cursor: pointer;
       transition: all 0.1s ease-in-out;
       &:hover {
-        background: #eee;
+        background: rgba(255, 255, 255, 0.5);
         border-radius: 8px;
         color: #000;
         transition: all 0.1s ease-in-out;
@@ -83,16 +90,6 @@ export default {
         }
       }
     }
-  }
-  .main {
-    position: absolute;
-    top: 60px;
-    bottom: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 </style>

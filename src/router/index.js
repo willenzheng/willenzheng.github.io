@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import IndexPage from '../views/Index.vue';
+import Experiment from '../views/Experiment.vue';
+import BlogArticle from '../views/Blog/BlogArticle.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +11,16 @@ const routes = [
     path: '/',
     name: 'IndexPage',
     component: IndexPage,
+  },
+  {
+    path: '/experiment',
+    name: 'Experiment',
+    component: Experiment,
+  },
+  {
+    path: '/blog',
+    name: 'BlogArticle',
+    component: BlogArticle,
   },
   // {
   //   path: '/about',
