@@ -3,7 +3,7 @@
   <div class="index-page" ref="index">
     <header class="header">
       <div class="header__wrapper">
-        <a href="https://www.notion.so/willen/Dev-bf2f217106e445c99e604964a348b8fe" target="blank">
+        <a href="https://willen.notion.site/Dev-bf2f217106e445c99e604964a348b8fe" target="blank">
           <div class="header__item">
             <div class="image-wrapper">
               <img src="@/assets/logo-notion.png" alt="" />
