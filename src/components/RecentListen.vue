@@ -10,7 +10,7 @@
     >
       <div class="player__cover" ref="playerCover">
         <img
-          src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version) .jpg"
+          src="../../public/music/Green is the Colour.m4a.jpg"
           alt=""
         />
       </div>
@@ -19,7 +19,7 @@
         <i v-else class="iconfont icon-zanting"></i>
       </div>
       <audio
-        src="../../public/music/Imagine Dragons - Follow You (Summer ’21 Version) .mp3"
+        src="../../public/music/Green is the Colour.m4a"
         loop
         ref="music"
       ></audio>
