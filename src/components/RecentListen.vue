@@ -10,7 +10,7 @@
     >
       <div class="player__cover" ref="playerCover">
         <img
-          src="../../public/music/Green is the Colour.m4a.jpg"
+          src="../../public/music/Green is the Colour.jpg"
           alt=""
         />
       </div>
@@ -19,7 +19,7 @@
         <i v-else class="iconfont icon-zanting"></i>
       </div>
       <audio
-        src="../../public/music/Green is the Colour.m4a"
+        src="../../public/music/Green is the Colour.mp3"
         loop
         ref="music"
       ></audio>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+const artWork = require('../../public/music/Green is the Colour.jpg');
+
 export default {
   name: 'RecentListen',
 
@@ -73,11 +75,11 @@ export default {
         }
         this.$refs.playerCover.style.transform = `rotate(${this.angle}deg)`;
       }, 10);
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: "Follow You (Summer ’21 Version) ",
-        artist: "Imagine Dragons",
-        album: "Follow You (Summer ’21 Version) - Single",
-        artwork: [{src: "/img/Imagine Dragons - Follow You (Summer ’21 Version-Audio) .1d605805.jpg"}]
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: 'Green is the Colour',
+        artist: 'Pink Floyd',
+        album: 'More',
+        artwork: [{ src: artWork }],
       });
     },
 
