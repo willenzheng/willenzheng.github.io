@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
-    "highlight.js": "^11.0.1",
+    "sass": "^1.63.6",
     "vue": "^2.6.11",
     "vue-embed-gist": "^1.2.0",
     "vue-highlight.js": "^3.1.0",
@@ -28,7 +28,6 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "vue-markdown-loader": "^0.6.2",
     "vue-template-compiler": "^2.6.11"

@@ -3,14 +3,14 @@
   <div class="recent-listen">
     <div class="recent-listen__label">最近在听</div>
     <div
-      class="recent-listen__player  pointer"
+      class="recent-listen__player pointer"
       tabindex="0"
       @click="toggleMusicPlay"
       @keydown.enter="toggleMusicPlay"
     >
       <div class="player__cover" ref="playerCover">
         <img
-          src="../../public/music/Green is the Colour.jpg"
+          :src="cover"
           alt=""
         />
       </div>
@@ -19,7 +19,7 @@
         <i v-else class="iconfont icon-zanting"></i>
       </div>
       <audio
-        src="../../public/music/Green is the Colour.mp3"
+        :src="music"
         loop
         ref="music"
       ></audio>
@@ -28,13 +28,16 @@
 </template>
 
 <script>
-const artWork = require('../../public/music/Green is the Colour.jpg');
+const artWork = require('../../public/music/Green is the Colour/index.jpg');
+const musicSource = require('../../public/music/Green is the Colour/index.mp3');
 
 export default {
   name: 'RecentListen',
 
   data() {
     return {
+      cover: artWork,
+      music: musicSource,
       isMusicPlaying: false,
       angle: 0,
       interval: null,
